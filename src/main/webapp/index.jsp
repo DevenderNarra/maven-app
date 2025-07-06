@@ -1,9 +1,8 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DevOps Learning Hub</title>
+  <title>DevOps Learning Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -12,83 +11,100 @@
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
       color: #333;
-      line-height: 1.6;
     }
     header {
       background-color: #1f2937;
       color: white;
-      padding: 40px;
-      text-align: center;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     header h1 {
-      font-size: 36px;
       margin: 0;
+      font-size: 24px;
     }
-    header p {
-      font-size: 16px;
-      color: #cbd5e0;
-    }
-    section {
-      padding: 40px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    h2 {
-      color: #1d4ed8;
-      font-size: 28px;
-    }
-    ul {
-      margin: 10px 0 20px 20px;
-    }
-    pre {
-      background-color: #f3f4f6;
-      padding: 15px;
-      border-radius: 6px;
-      overflow-x: auto;
-    }
-    a {
-      color: #2563eb;
+    nav a {
+      color: white;
+      margin-left: 20px;
       text-decoration: none;
+      font-weight: bold;
     }
-    a:hover {
+    nav a:hover {
       text-decoration: underline;
     }
-    .resource-links a {
-      display: block;
-      margin-top: 5px;
+    main {
+      padding: 40px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      color: #2563eb;
+    }
+    pre {
+      background-color: #e2e8f0;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
     }
     footer {
       background-color: #1f2937;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Welcome to DevOps Learning Hub</h1>
-  <p>Learn about Continuous Integration and Continuous Deployment (CI/CD), Jenkins, and Maven</p>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>DevOps Learning Portal</h1>
+    <nav>
+      <a href="#cicd">CI/CD</a>
+      <a href="#jenkins">Jenkins</a>
+      <a href="#maven">Maven</a>
+      <a href="#resources">Resources</a>
+    </nav>
+  </header>
 
-<section>
-  <h2>What is CI/CD?</h2>
-  <p>CI/CD stands for Continuous Integration and Continuous Deployment/Delivery. It helps teams deliver software faster and more reliably.</p>
-  <ul>
-    <li><strong>CI</strong>: Merges and tests code frequently to catch issues early.</li>
-    <li><strong>CD</strong>: Automatically deploys builds to production or staging environments.</li>
-  </ul>
-</section>
+  <!-- Main Body -->
+  <main>
 
-<section>
-  <h2>🔧 Jenkins Pipeline Example</h2>
-  <p>Jenkins is an open-source automation server used for building CI/CD pipelines. Here's a basic pipeline example:</p>
-  <pre>
+    <section id="cicd">
+      <h2>What is CI/CD?</h2>
+      <p>
+        <strong>CI/CD</strong> stands for Continuous Integration and Continuous Deployment/Delivery. It helps teams deliver software quickly and efficiently.
+      </p>
+      <ul>
+        <li><strong>CI</strong>: Merges and tests code frequently to avoid conflicts.</li>
+        <li><strong>CD</strong>: Automatically deploys builds to production/staging.</li>
+      </ul>
+    </section>
+
+    <section id="jenkins">
+      <h2>Jenkins Pipeline Example</h2>
+      <p>Jenkins is an open-source tool for automating CI/CD workflows. Here’s a simple pipeline:</p>
+      <pre>
 pipeline {
   agent any
+
   stages {
     stage('Build') {
       steps {
@@ -107,29 +123,34 @@ pipeline {
     }
   }
 }
-  </pre>
-</section>
+      </pre>
+    </section>
 
-<section>
-  <h2>📦 Maven Usage</h2>
-  <p>Apache Maven is a popular build automation tool used in Java projects. It handles dependencies and the build lifecycle.</p>
-  <ul>
-    <li><code>mvn clean install</code>Cleans and builds the project</li>
-    <li><code>mvn test</code>Runs unit tests</li>
-    <li><code>mvn package</code> Packages into JAR/WAR</li>
-  </ul>
-</section>
+    <section id="maven">
+      <h2>Maven Usage</h2>
+      <p>Maven simplifies Java builds and dependency management. Key commands include:</p>
+      <ul>
+        <li><code>mvn clean install</code> – Cleans and builds the project</li>
+        <li><code>mvn test</code> – Runs unit tests</li>
+        <li><code>mvn package</code> – Packages into JAR/WAR</li>
+      </ul>
+    </section>
 
-<section class="resource-links">
-  <h2>Useful Resources</h2>
-  <a href="https://maven.apache.org/" target="_blank">Apache Maven Official Documentation</a>
-  <a href="https://www.jenkins.io/doc/" target="_blank">Jenkins User Documentation</a>
-  <a href="https://www.atlassian.com/continuous-delivery" target="_blank">CI/CD Concepts by Atlassian</a>
-</section>
+    <section id="resources">
+      <h2>Useful Resources</h2>
+      <ul>
+        <li><a href="https://maven.apache.org/" target="_blank">Apache Maven</a></li>
+        <li><a href="https://www.jenkins.io/doc/" target="_blank">Jenkins Docs</a></li>
+        <li><a href="https://www.atlassian.com/continuous-delivery" target="_blank">CI/CD Overview</a></li>
+      </ul>
+    </section>
 
-<footer>
-  © 2025 DevOps Learning Hub. All rights reserved.
-</footer>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 DevOps Learning Portal. All rights reserved.
+  </footer>
 
 </body>
 </html>
