@@ -40,7 +40,7 @@
   <h1>Welcome to CI/CD Learning Page</h1>
 
   <div class="section">
-    <h2>🚀 What is CI/CD?</h2>
+    <h2>What is CI/CD?</h2>
     <p>
       <strong>CI/CD</strong> stands for <em>Continuous Integration and Continuous Deployment/Delivery</em>. It is a modern DevOps practice used to build, test, and deploy applications faster and more reliably.
     </p>
@@ -51,7 +51,7 @@
   </div>
 
   <div class="section">
-    <h2>🔧 Jenkins Pipeline Example</h2>
+    <h2>Jenkins Pipeline Example</h2>
     <p>
       Jenkins helps automate your CI/CD workflow. Here's a basic Jenkins pipeline using a <code>Jenkinsfile</code>:
     </p>
@@ -84,7 +84,7 @@ pipeline {
   </div>
 
   <div class="section">
-    <h2>📦 Using Maven</h2>
+    <h2>Using Maven</h2>
     <p>
       Apache Maven is a powerful tool for managing builds, dependencies, and project structure in Java applications.
     </p>
