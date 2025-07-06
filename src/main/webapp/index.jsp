@@ -2,107 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CI/CD with Jenkins and Maven</title>
+  <title>DevOps Learning Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      padding: 40px;
-      background-color: #f9f9f9;
+      background-color: #f4f6f8;
       color: #333;
-      line-height: 1.6;
     }
-    h1 {
-      color: #2e8b57;
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    h2 {
-      color: #1e90ff;
+    header h1 {
+      margin: 0;
+      font-size: 24px;
     }
-    a {
-      color: #0077cc;
+    nav a {
+      color: white;
+      margin-left: 20px;
       text-decoration: none;
+      font-weight: bold;
     }
-    a:hover {
+    nav a:hover {
       text-decoration: underline;
     }
-    code {
-      background-color: #eee;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: monospace;
+    main {
+      padding: 40px;
     }
-    .section {
-      margin-bottom: 30px;
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      color: #2563eb;
+    }
+    pre {
+      background-color: #e2e8f0;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to CI/CD Learning Page</h1>
+  <!-- Header -->
+  <header>
+    <h1>DevOps Learning Portal</h1>
+    <nav>
+      <a href="#cicd">CI/CD</a>
+      <a href="#jenkins">Jenkins</a>
+      <a href="#maven">Maven</a>
+      <a href="#resources">Resources</a>
+    </nav>
+  </header>
 
-  <div class="section">
-    <h2>What is CI/CD?</h2>
-    <p>
-      <strong>CI/CD</strong> stands for <em>Continuous Integration and Continuous Deployment/Delivery</em>. It is a modern DevOps practice used to build, test, and deploy applications faster and more reliably.
-    </p>
-    <ul>
-      <li><strong>CI</strong>: Automatically test and merge code changes into a shared repository.</li>
-      <li><strong>CD</strong>: Automatically deploy the application to production or staging environments.</li>
-    </ul>
-  </div>
+  <!-- Main Body -->
+  <main>
 
-  <div class="section">
-    <h2>Jenkins Pipeline Example</h2>
-    <p>
-      Jenkins helps automate your CI/CD workflow. Here's a basic Jenkins pipeline using a <code>Jenkinsfile</code>:
-    </p>
-    <pre>
+    <section id="cicd">
+      <h2>What is CI/CD?</h2>
+      <p>
+        <strong>CI/CD</strong> stands for Continuous Integration and Continuous Deployment/Delivery. It helps teams deliver software quickly and efficiently.
+      </p>
+      <ul>
+        <li><strong>CI</strong>: Merges and tests code frequently to avoid conflicts.</li>
+        <li><strong>CD</strong>: Automatically deploys builds to production/staging.</li>
+      </ul>
+    </section>
+
+    <section id="jenkins">
+      <h2>🔧 Jenkins Pipeline Example</h2>
+      <p>Jenkins is an open-source tool for automating CI/CD workflows. Here’s a simple pipeline:</p>
+      <pre>
 pipeline {
   agent any
 
   stages {
     stage('Build') {
       steps {
-        echo 'Building the project...'
         sh 'mvn clean install'
       }
     }
     stage('Test') {
       steps {
-        echo 'Running tests...'
         sh 'mvn test'
       }
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying the application...'
-        // Add deploy commands here
+        echo 'Deploying...'
       }
     }
   }
 }
-    </pre>
-  </div>
+      </pre>
+    </section>
 
-  <div class="section">
-    <h2>Using Maven</h2>
-    <p>
-      Apache Maven is a powerful tool for managing builds, dependencies, and project structure in Java applications.
-    </p>
-    <ul>
-      <li>Use <code>mvn clean install</code> to compile and package your code.</li>
-      <li>Define project dependencies in <code>pom.xml</code>.</li>
-      <li>Integrate Maven easily into Jenkins or other CI/CD tools.</li>
-    </ul>
-  </div>
+    <section id="maven">
+      <h2>Maven Usage</h2>
+      <p>Maven simplifies Java builds and dependency management. Key commands include:</p>
+      <ul>
+        <li><code>mvn clean install</code> – Cleans and builds the project</li>
+        <li><code>mvn test</code> – Runs unit tests</li>
+        <li><code>mvn package</code> – Packages into JAR/WAR</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>📚 Learn More</h2>
-    <ul>
-      <li><a href="https://maven.apache.org/" target="_blank">Maven Official Site</a></li>
-      <li><a href="https://www.jenkins.io/doc/" target="_blank">Jenkins Documentation</a></li>
-      <li><a href="https://www.atlassian.com/continuous-delivery" target="_blank">CI/CD Concepts (Atlassian)</a></li>
-    </ul>
-  </div>
+    <section id="resources">
+      <h2>Useful Resources</h2>
+      <ul>
+        <li><a href="https://maven.apache.org/" target="_blank">Apache Maven</a></li>
+        <li><a href="https://www.jenkins.io/doc/" target="_blank">Jenkins Docs</a></li>
+        <li><a href="https://www.atlassian.com/continuous-delivery" target="_blank">CI/CD Overview</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 DevOps Learning Portal. All rights reserved.
+  </footer>
 
 </body>
 </html>
