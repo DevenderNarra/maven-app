@@ -88,7 +88,7 @@
   <main>
 
     <section id="cicd">
-      <h2>What is CI/CD? Azure Batch</h2>
+      <h2>What is CI/CD?</h2>
       <p>
         <strong>CI/CD</strong> stands for Continuous Integration and Continuous Deployment/Delivery. It helps teams deliver software quickly and efficiently.
       </p>
